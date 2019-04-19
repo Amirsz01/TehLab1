@@ -1,13 +1,26 @@
 #include "o_protected.h"
+#include "el.h"
 
 void o_protected::process()
 {
-	cout << num() / 2 << " четных элемента в очереди" << endl;
+	int sum = 0;
+	struct el *current = getHead();
+	while (current != NULL)
+	{
+		if (!(current->x % 2))
+			sum++;
+		current = current->prev;
+	}
+	cout << "Количество элементов " << sum << endl;
 	system("pause");
 }
 
-och *o_protected::return_ptr()
+void o_protected::set(el* head)
 {
-	och *result = new o_protected;
-	return result;
+	setHead(head);
+}
+
+void o_protected::setNum(int num)
+{
+	countEdit(num);
 }

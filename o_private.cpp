@@ -1,13 +1,26 @@
 #include "o_private.h"
+#include "el.h"
 
 void o_private::process()
 {
-	cout << num() / 2 << " четных элемента в очереди" << endl;
+	int sum = 0;
+	struct el *current = getHead();
+	while (current != NULL)
+	{
+		if (!(current->x % 2))
+			sum++;
+		current = current->prev;
+	}
+	cout << "Количество элементов " << sum << endl;
 	system("pause");
 }
 
-och *o_private::return_ptr()
+void o_private::set(el* head) 
 {
-	och *result = new o_private;
-	return result;
+	setHead(head);
+}
+
+void o_private::setNum(int num)
+{
+	countEdit(num);
 }

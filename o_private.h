@@ -4,6 +4,7 @@
 class o_private : private och
 {
 public:
+	void set(el* head);
+	void setNum(int num);
 	void process();
-	static och *return_ptr();
 };

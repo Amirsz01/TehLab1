@@ -5,23 +5,19 @@ int och::num()
 {
 	return count;
 }
-
 struct el* och::getHead()
 {
 	return head;
 }
-
 struct el* och::setHead(struct el* newHead)
 {
 	head = newHead;
 	return head;
 }
-
 void och::countEdit(int num)
 {
 	count = count + num;
 }
-
 void och::put()
 {
 	if(getHead() == NULL)
@@ -52,35 +48,19 @@ void och::cut()
 	int i = num();
 	el *current = getHead();
 	el *buf;
-	int callback;
 	if (!getHead()) 
 	{
 		cout << "Очередь пуста" << endl;
 		system("pause");
 		return;
 	}
-	cout << "Выберите элемент для извлечения из очереди" << endl;
-	while (current != NULL)
+	buf = getHead();
+	while (buf->prev->prev != NULL)
 	{
-		cout << "[" << i-- << "] " << current->x << endl;
-		current = current->prev;
+		buf = buf->prev;
 	}
-	cin >> callback;
-	current = getHead();
-	if (!(num() - callback))
-	{
-		buf = getHead();
-		setHead(getHead()->prev);
-		delete buf; 
-	}
-	else
-	{
-		for (i = 0; i < callback - 2; i++)
-			current = current->prev;
-		buf = current->prev;
-		current->prev = buf->prev;
-		delete buf;
-	}
+	delete buf->prev->prev;
+	buf->prev = NULL;
 	countEdit(-1);
 	cout << "Элемент успешно извлечен из очереди" << endl;
 	system("pause");

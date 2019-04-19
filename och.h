@@ -19,7 +19,6 @@ public:
 	void countEdit(int num); // Изменить количество элементов
 	struct el* getHead(); // Получение головы
 	struct el* setHead(struct el* newHead); // Установить начало
-	virtual void process() = 0;
 };
 
 #include </Users/Amirsz/source/repos/ТестовыйСтенд/ТестовыйСтенд/o_public.h>
