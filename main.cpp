@@ -1,12 +1,12 @@
 #pragma once
-#include </Users/Amirsz/source/repos/ТестовыйСтенд/ТестовыйСтенд/och.h>
+#include </Users/Amirsz/source/repos/РўРµСЃС‚РѕРІС‹Р№РЎС‚РµРЅРґ/РўРµСЃС‚РѕРІС‹Р№РЎС‚РµРЅРґ/och.h>
 #include <conio.h>
 #include "el.h"
 using namespace std;
 int main()
 {
 	int menu;
-	och a; // Оригинал
+	och a; // РћСЂРёРіРёРЅР°Р»
 	och copy;
 	och subs;
 	o_public pub;
@@ -15,16 +15,16 @@ int main()
 	int callback;
 	int calltype;
 	setlocale(LC_ALL, "Russian");
-	while(1)
+	while (1)
 	{
 		system("CLS");
-		cout << "1 – Добавление элемента очереди" << endl
-			<< "2 – Извлечение элемента очереди" << endl
-			<< "3 – Вывод очереди на экран" << endl
-			<< "4 – Вычисление требуемого значения" << endl
-			<< "5 – Создание копии очереди" << endl
-			<< "6 – Слияние оригинальной очереди с копией и вывод результата на экран" << endl
-			<< "7 – Выход из программы" << endl;
+		cout << "1 Р”РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РѕС‡РµСЂРµРґРё" << endl
+			<< "2 РР·РІР»РµС‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РѕС‡РµСЂРµРґРё" << endl
+			<< "3 Р’С‹РІРѕРґ РѕС‡РµСЂРµРґРё РЅР° СЌРєСЂР°РЅ" << endl
+			<< "4 Р’С‹С‡РёСЃР»РµРЅРёРµ С‚СЂРµР±СѓРµРјРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ" << endl
+			<< "5 РЎРѕР·РґР°РЅРёРµ РєРѕРїРёРё РѕС‡РµСЂРµРґРё" << endl
+			<< "6 РЎР»РёСЏРЅРёРµ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕР№ РѕС‡РµСЂРµРґРё СЃ РєРѕРїРёРµР№ Рё РІС‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚Р° РЅР° СЌРєСЂР°РЅ" << endl
+			<< "7 Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹" << endl;
 		cin >> menu;
 		switch (menu)
 		{
@@ -40,7 +40,7 @@ int main()
 			a.show();
 			break;
 		case 4:
-			cout << "Тип наследования?" << endl
+			cout << "РўРёРї РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ?" << endl
 				<< "1 - Public" << endl
 				<< "2 - Protected" << endl
 				<< "3 - Private" << endl;
@@ -68,7 +68,7 @@ int main()
 			break;
 		case 5:
 			a.copy(&copy);
-			cout << "Вывести ее на экран? 1/0" << endl;
+			cout << "Р’С‹РІРµСЃС‚Рё РµРµ РЅР° СЌРєСЂР°РЅ? 1/0" << endl;
 			cin >> callback;
 			if (callback)
 			{
@@ -76,7 +76,7 @@ int main()
 			}
 			break;
 		case 6:
-			subs.sub(&a,&copy);
+			subs.sub(&a, &copy);
 			subs.show();
 			break;
 		default:
